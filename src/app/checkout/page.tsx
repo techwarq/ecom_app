@@ -31,7 +31,7 @@ interface Configuration {
 
 const CheckOut = () => {
   const router = useRouter()
-  const { toast } = useToast()
+
   const [showConfetti, setShowConfetti] = useState<boolean>(false)
   const [isLoginModalOpen, setIsLoginModalOpen] = useState<boolean>(false)
   const [configuration, setConfiguration] = useState<Configuration | null>(null)
