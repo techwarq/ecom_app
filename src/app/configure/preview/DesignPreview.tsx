@@ -6,19 +6,19 @@ import { BASE_PRICE, PRODUCT_PRICES } from '@/config/product'
 import { cn, formatPrice } from '@/lib/utils'
 import { COLORS,  MODELS } from '@/validators/option-validator'
 import { Configuration } from '@prisma/client'
-import { useMutation } from '@tanstack/react-query'
+
 import { ArrowRight, Check } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import Confetti from 'react-dom-confetti'
-import { createCheckoutSession } from './actions'
-import { redirect, useRouter } from 'next/navigation'
+
+import {  useRouter } from 'next/navigation'
 import { useToast } from '@/components/ui/use-toast'
 import { useKindeBrowserClient } from '@kinde-oss/kinde-auth-nextjs'
 import LoginModal from '@/components/LoginModal'
 
 const DesignPreview = ({ configuration }: { configuration: Configuration }) => {
   const router = useRouter()
-  const { toast } = useToast()
+
   const { id } = configuration
   const { user } = useKindeBrowserClient()
   const [isLoginModalOpen, setIsLoginModalOpen] = useState<boolean>(false)

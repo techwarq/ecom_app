@@ -20,18 +20,27 @@ const PRODUCT_PRICES = {
   },
 }
 
+// Define the type for the configuration
+interface Configuration {
+  color: string
+  model: string
+  finish: 'textured' | 'smooth'
+  material: 'polycarbonate' | 'plastic'
+  croppedImageUrl?: string
+}
+
 const CheckOut = () => {
   const router = useRouter()
   const { toast } = useToast()
   const [showConfetti, setShowConfetti] = useState<boolean>(false)
   const [isLoginModalOpen, setIsLoginModalOpen] = useState<boolean>(false)
-  const [configuration, setConfiguration] = useState<any>(null)
+  const [configuration, setConfiguration] = useState<Configuration | null>(null)
 
   useEffect(() => {
     setShowConfetti(true)
     fetch('/api/configurations')
       .then((res) => res.json())
-      .then((data) => {
+      .then((data: Configuration[]) => {
         // Assuming you only need the first configuration, adjust if needed
         setConfiguration(data[0])
       })
@@ -74,7 +83,7 @@ const CheckOut = () => {
         <div className='md:col-span-4 lg:col-span-3 md:row-span-2 md:row-end-2'>
           <Phone
             className={tw ? `bg-${tw}` : 'bg-gray-200'}
-            imgSrc={croppedImageUrl || '/default-image.png'}
+            imgSrc={croppedImageUrl || ''}
           />
         </div>
 
