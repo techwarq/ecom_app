@@ -1,5 +1,4 @@
 
-import Footer from '@/components/Footer'
 import { Icons } from '@/components/Icons'
 import MaxWidthWrapper from '@/components/MaxWidthWrapper'
 import Phone from '@/components/Phone'
@@ -18,11 +17,11 @@ export default function Home() {
               <div className='absolute w-28 left-0 -top-20 hidden lg:block'>
                 {/* i forgot this div right here in the video, it's purely visual gradient and looks nice */}
                 <div className='absolute inset-x-0 bottom-0 bg-gradient-to-t via-slate-50/65 from-slate-50 h-28' />
-                <img src='/snake-1.png' className='w-full' />
+                <img src='/batman2.png' className='w-full' />
               </div>
               <h1 className='relative w-fit tracking-tight text-balance mt-16 font-bold !leading-tight text-gray-900 text-5xl md:text-6xl lg:text-7xl'>
                 Your Image on a{' '}
-                <span className='bg-green-600 px-2 text-white'>Custom</span>{' '}
+                <span className='bg-gray-600 px-2 text-white'>Custom</span>{' '}
                 Phone Case
               </h1>
               <p className='mt-8 text-muted-foreground text-lg lg:pr-10 max-w-prose text-center lg:text-left text-balance md:text-wrap'>
@@ -123,7 +122,7 @@ export default function Home() {
               </span>{' '}
               say
             </h2>
-            <img src='/snake-2.png' className='w-24 order-0 lg:order-2' />
+            <img src='/batman.png' className=' w-48 order-0 lg:order-2' />
           </div>
 
           <div className='mx-auto grid max-w-2xl grid-cols-1 px-4 lg:mx-0 lg:max-w-none lg:grid-cols-2 gap-y-16'>
@@ -212,7 +211,7 @@ export default function Home() {
             <div className='mx-auto max-w-2xl sm:text-center'>
               <h2 className='order-1   mt-2 tracking-tight text-center text-balance !leading-tight font-bold text-5xl md:text-6xl text-gray-900'>
                 Upload your photo and get{' '}
-                <span className='relative px-2 bg-green-600 text-white'>
+                <span className='relative px-2 bg-gray-600 text-white'>
                   your own case
                 </span>{' '}
                 now
@@ -269,7 +268,7 @@ export default function Home() {
           </ul>
         </MaxWidthWrapper>
       </section>
-      <section><Footer /></section>
+     
     </div>
   )
 }
